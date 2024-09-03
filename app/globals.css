@@ -25,3 +25,26 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.img-profile {
+  border: 0.5rem solid rgba(255, 255, 255, 0.2)
+}
+
+.name-field {
+  color: #343a40
+}
+
+.text-primary {
+  color: #a2a2a2
+}
+
+.text-secondary {
+  color: #6c757d
+}
+
+.page-text-font {
+  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  
+}
