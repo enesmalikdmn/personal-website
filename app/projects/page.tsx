@@ -8,9 +8,9 @@ const projects = [
     image: '/images/ecommerce.png', // Public içindeki resim dosyasının yolu
   },
   {
-    name: 'Portfolio Website',
-    description: 'A personal portfolio showcasing my work.',
-    image: '/images/ecommerce.png', // Public içindeki resim dosyasının yolu
+    name: 'Moive App',
+    description: 'A movie app with broadcast channel.',
+    image: '/images/movieList.png', // Public içindeki resim dosyasının yolu
   },
 ];
 

@@ -1,8 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import PropTypes from 'prop-types';
 
-function Card({ name, description, image }) {
+interface CardProps {
+  name: string;
+  description: string;
+  image: string;
+}
+
+const Card: React.FC<CardProps> = ({ name, description, image }) => {
   return (
     <div className="border w-96 h-80 border-gray-300 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200">
       <Image
@@ -17,12 +22,6 @@ function Card({ name, description, image }) {
       <p className="text-gray-600 text-sm mt-2">{description}</p>
     </div>
   );
-}
-
-Card.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
 };
 
 export default Card;
