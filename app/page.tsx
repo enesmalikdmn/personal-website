@@ -2,12 +2,29 @@
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
+import { useEffect, useRef } from "react";
+import lottie from "lottie-web";
+import animationData from "@/public/animations/developer.json";
 
 export default function Home() {
   const router = useRouter()
+  const container = useRef(null);
+
+  useEffect(() => {
+      const anim = lottie.loadAnimation({
+          container: container.current,
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          animationData,
+      });
+
+      return () => anim.destroy(); // Cleanup
+  }, []);
   return (
-    <div className="flex w-full h-full">
-      <div className='w-full h-full bg-white text-black flex flex-col justify-center gap-12'>
+    <div className="flex w-full h-full justify-center">
+      <div className='w-full h-full bg-white text-black flex items-center flex-col justify-center gap-12'>
+      <div ref={container} style={{ width: "300px", height: "300px" }} />
         <h1 className='page-text-font text-[48px] uppercase font-bold text-center'>
           <span className='name-field'>Enes Malik</span>
           <span className='text-primary ml-2'>Duman</span>
