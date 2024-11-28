@@ -1,26 +1,27 @@
 'use client'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 
 import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import animationData from "@/public/animations/developer.json";
 
 export default function Home() {
-  const router = useRouter()
   const container = useRef(null);
 
   useEffect(() => {
+    if (container.current) {
       const anim = lottie.loadAnimation({
-          container: container.current,
-          renderer: "svg",
-          loop: true,
-          autoplay: true,
-          animationData,
+        container: container.current, // Burada '!' kullanılıyor
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
       });
 
-      return () => anim.destroy(); // Cleanup
+      return () => anim.destroy();
+    }
   }, []);
+
   return (
     <div className="flex w-full h-full justify-center">
       <div className='w-full h-full bg-white text-black flex items-center flex-col justify-center gap-12'>
