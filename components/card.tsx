@@ -9,17 +9,24 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ name, description, image }) => {
   return (
-    <div className="border w-96 h-80 border-gray-300 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200">
+    <div className="relative w-96 h-80 rounded-lg overflow-hidden group cursor-pointer">
+      {/* Arkaplan Görsel */}
       <Image
         src={image}
         alt={name}
-        width={375}
-        height={225}
-        className="rounded-md"
+        layout="fill"
+        objectFit="cover"
+        className="transform group-hover:scale-110 transition-transform duration-300 ease-in-out"
         priority
       />
-      <h3 className="text-gray-600 mt-4 text-lg font-semibold">{name}</h3>
-      <p className="text-gray-600 text-sm mt-2">{description}</p>
+
+      {/* Hover'da Gözükecek Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+        <div className="text-center px-4">
+          <h3 className="text-white text-lg font-bold">{name}</h3>
+          <p className="text-gray-300 text-sm mt-2">{description}</p>
+        </div>
+      </div>
     </div>
   );
 };
