@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="flex w-full h-full justify-center">
-      <div className='w-full h-full bg-white text-black flex items-center flex-col justify-center gap-12'>
+      <div className='w-full h-full bg-white text-black flex items-center flex-col justify-center gap-8'>
       <div ref={container} style={{ width: "300px", height: "300px" }} />
       <Typewriter texts={['Enes Malik Duman', 'Frontend Developer']} />
       <div className='flex justify-center'>

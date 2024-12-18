@@ -43,7 +43,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
 
   return (
     <span className="typewriter-text flex gap-3">
-        <span className='text-primary'>I'm</span>
+        <span className='text-primary'>I&apos;m</span>
        {currentText}
       <span className="cursor">|</span>
     </span>

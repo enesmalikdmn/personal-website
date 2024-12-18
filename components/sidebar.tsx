@@ -5,26 +5,33 @@ import Image from 'next/image';
 const Sidebar = () => {
   return (
     <div className="w-1/5 h-screen flex justify-center items-center bg-black">
-      {/* Profil Resmi Container */}
-      <div className="relative group">
-        {/* Fotoğraf */}
-        <Image
-          src="/work-pp.jpeg"
-          alt="work-pp"
-          width={250}
-          height={250}
-          className="rounded-full object-cover border-4 img-profile group-hover:scale-110 transition-transform duration-500 ease-in-out"
-          priority
-        />
+      {/* Dönüş Animasyonu için Container */}
+      <div className="relative w-64 h-64 group [perspective:1000px]">
+        {/* Kartın İç Yapısı */}
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          {/* Kartın Ön Yüzü */}
+          <div className="absolute inset-0">
+            <Image
+              src="/work-pp.jpeg"
+              alt="work-pp"
+              width={256}
+              height={256}
+              className="rounded-full object-cover border-4 img-profile"
+              priority
+            />
+          </div>
 
-        {/* Hover Efektli Animasyonlu Çerçeve */}
-        <div className="absolute top-0 left-0 w-full h-full rounded-full border-4 border-transparent group-hover:border-primary animate-border-spin transition-all duration-500 ease-in-out"></div>
-{/* 
-        <div className="absolute bottom-0 transform translate-y-1/2 w-full bg-black/70 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-          <span className="text-sm font-semibold tracking-wide uppercase">
-            Frontend Developer
-          </span>
-        </div> */}
+          {/* Kartın Arka Yüzü */}
+          <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] bg-black rounded-full flex items-center justify-center">
+            <Image
+              src="/test.png" // Arka tarafta gösterilecek farklı bir görsel
+              alt="work-pp-back"
+              width={256}
+              height={256}
+              className="rounded-full object-cover border-4 border-gray-600"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
