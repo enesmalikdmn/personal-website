@@ -24,7 +24,7 @@ const Sidebar = () => {
           {/* Kartın Arka Yüzü */}
           <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] bg-black rounded-full flex items-center justify-center">
             <Image
-              src="/test.png" // Arka tarafta gösterilecek farklı bir görsel
+              src="/work-pp-back.png" // Arka tarafta gösterilecek farklı bir görsel
               alt="work-pp-back"
               width={256}
               height={256}
