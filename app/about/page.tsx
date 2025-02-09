@@ -2,6 +2,9 @@
 import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import animationData from "@/public/animations/developer.json";
+import TechIcon from "@/components/TechIcon";
+import { techStack } from "@/lib/logos";
+
 export default function About() {
   const container = useRef(null);
 
@@ -43,13 +46,15 @@ export default function About() {
           </p>
           <p className="text-primary page-text-font text-[18px] text-left">
             I am currently a software engineer with a passion for learning new
-            technologies. I have used technologies such as Vue.js, React,
-            Typescript, Pinia, Vuex, Redux Toolkit, Zustand, Canvas.js, TanStack
-            Query.
-            
-            I have implemented and managed projects both alone and with
-            teams. I have worked closely with designers to ensure proper
-            implementation of UI components and visuals.
+            technologies. Technologies I use:
+            <div className="flex gap-4 my-4">
+              {techStack.map((tech) => (
+                <TechIcon key={tech.name} {...tech} />
+              ))}
+            </div>
+            I have implemented and managed projects both alone and with teams. I
+            have worked closely with designers to ensure proper implementation
+            of UI components and visuals.
           </p>
           <p className="text-primary page-text-font text-[18px] text-left">
             I adhered to Agile methodologies including Scrum and Kanban. I have
