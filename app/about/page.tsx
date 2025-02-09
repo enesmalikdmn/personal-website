@@ -1,23 +1,67 @@
-import Image from "next/image";
-
+"use client";
+import { useEffect, useRef } from "react";
+import lottie from "lottie-web";
+import animationData from "@/public/animations/developer.json";
 export default function About() {
+  const container = useRef(null);
+
+  useEffect(() => {
+    if (container.current) {
+      const anim = lottie.loadAnimation({
+        container: container.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+      });
+
+      return () => anim.destroy();
+    }
+  }, []);
+
   return (
-    <main className="flex text-primary bg-white h-full">
-      <div className="flex justify-center">
-        <p className="w-1/2 text-primary page-text-font text-[18px] text-center">
-          I graduated from Ege University, Department of Electrical and
-          Electronics Engineering. Disciplined temperament, eager to learn new
-          skills, prone to leadership capacity, became a leader at Kuleli
-          Military High School. I am currently a software engineer passionate
-          about learning new technologies. I have carried out projects using
-          technologies such as Vue.js, React, Typescript, Pinia, Redux Toolkit,
-          Canvas.js, Vue-query both alone and with a team. I worked closely with
-          designers to ensure proper implementation of UI components and
-          visuals. I adhered to Agile methodologies including Scrum and Kanban.
-          I have improved myself in subjects such as leadership and teamwork. I
-          have been working as a Frontend Developer since 2021. I have been
-          working as a Frontend team leader for three months.
-        </p>
+    <main className="flex flex-col text-primary bg-white h-full">
+      <div className="relative flex flex-col items-center m-32">
+        <div className="text-[8rem] uppercase font-semibold opacity-10 absolute top-1/2 -translate-y-1/2">
+          About Me
+        </div>
+        <div className="text-[2rem] font-semibold text-black relative z-10 border-b-2 border-[#BEBE28]">
+          Know Me More
+        </div>
+      </div>
+      <div className="flex justify-center gap-14">
+        <div className="w-1/2 flex flex-col gap-4">
+          <div className="page-text-font text-[32px]">
+            I&apos;m <span className="text-[#BEBE28]">Enes Malik Duman</span>, a
+            Frontend Developer
+          </div>
+          <p className="text-primary page-text-font text-[18px] text-left">
+            I graduated from Ege University, Department of Electrical and
+            Electronics Engineering. Disciplined temperament, eager to learn new
+            skills, prone to leadership capacity, became a leader at Kuleli
+            Military High School.
+          </p>
+          <p className="text-primary page-text-font text-[18px] text-left">
+            I am currently a software engineer with a passion for learning new
+            technologies. I have used technologies such as Vue.js, React,
+            Typescript, Pinia, Vuex, Redux Toolkit, Zustand, Canvas.js, TanStack
+            Query.
+            
+            I have implemented and managed projects both alone and with
+            teams. I have worked closely with designers to ensure proper
+            implementation of UI components and visuals.
+          </p>
+          <p className="text-primary page-text-font text-[18px] text-left">
+            I adhered to Agile methodologies including Scrum and Kanban. I have
+            improved myself in subjects such as leadership and teamwork. I have
+            been working as a Frontend Developer since 2021. I have been working
+            as a Frontend team leader for three months.
+          </p>
+        </div>
+        <div
+          ref={container}
+          style={{ width: "300px", height: "300px", zIndex: 2 }}
+        />
       </div>
     </main>
   );
