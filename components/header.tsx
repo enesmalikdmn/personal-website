@@ -16,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="flex flex-col w-full text-primary justify-center text-lg items-center gap-8">
+    <header className="flex flex-col w-full text-primary justify-center text-lg items-center gap-8 cursor-pointer">
       {menuItems.map((item) => (
         <span
           key={item.path}
