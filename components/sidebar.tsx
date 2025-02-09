@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Header from "./header";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Sidebar = () => {
   return (
@@ -35,20 +37,16 @@ const Sidebar = () => {
         </div>
       </div>
       <Header />
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-4 text-primary">
         <a
+          className="hover:text-[#0077B5]"
           href="https://www.linkedin.com/in/enes-malik-duman-1077b0151/"
           target="_blank"
         >
-          <Image
-            width={24}
-            height={24}
-            src="/linkedin-logo.webp"
-            alt="linkedin"
-          />
+          <LinkedInIcon />
         </a>
-        <a href="https://github.com/enesmalikdmn" target="_blank">
-          <Image width={40} height={40} src="/github-logo.png" alt="github" />
+        <a className="hover:text-white" href="https://github.com/enesmalikdmn" target="_blank">
+          <GitHubIcon />
         </a>
       </div>
     </div>
