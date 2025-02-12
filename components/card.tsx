@@ -1,32 +1,26 @@
-import React from 'react';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Image from "next/image";
 
 interface CardProps {
   name: string;
   description: string;
   image: string;
+  link: string;
 }
 
-const Card: React.FC<CardProps> = ({ name, description, image }) => {
+const Card: React.FC<CardProps> = ({ name, description, image, link }) => {
   return (
-    <div className="relative w-96 h-80 rounded-lg overflow-hidden group cursor-pointer">
-      {/* Arkaplan Görsel */}
-      <Image
-        src={image}
-        alt={name}
-        layout="fill"
-        objectFit="cover"
-        className="transform group-hover:scale-110 transition-transform duration-300 ease-in-out"
-        priority
-      />
-
-      {/* Hover'da Gözükecek Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
-        <div className="text-center px-4">
-          <h3 className="text-white text-lg font-bold">{name}</h3>
-          <p className="text-gray-300 text-sm mt-2">{description}</p>
+    <div className="h-[24rem] w-[30rem] text-white border-2 border-[#f4f4f4] p-6 rounded-2xl max-w-3xl shadow-sm bg-white shadow-[#f4f4f4]">
+      <div className="flex flex-col gap-4">
+        <div onClick={() => window.open(link, "_blank")} className="relative cursor-pointer w-full md:h-[15rem] rounded-lg overflow-hidden">
+          <Image src={image} alt={name} layout="fill" objectFit="cover" />
         </div>
+        <div className="flex-1"></div>
       </div>
+      <div className="w-full h-[1px] bg-black my-4"></div>
+      <p className="text-black">{name}</p>
+      <p className="text-black text-sm">{description}</p>
     </div>
   );
 };
