@@ -38,9 +38,9 @@ const Card: React.FC<CardProps> = ({
         <div className="flex-1"></div>
       </div>
       <div className="w-full h-[1px] bg-black my-4"></div>
-      <div className="text-black text-xl">{name}</div>
+      <div className="text-black">{name}</div>
       <p className="text-black text-sm">{description}</p>
-      <div className="flex flex-wrap gap-2 mt-4">
+      <div className="flex flex-col gap-2 mt-4">
         <div className="text-black ">Used Technologies:</div>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
