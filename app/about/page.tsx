@@ -4,6 +4,7 @@ import lottie from "lottie-web";
 import animationData from "@/public/animations/developer.json";
 import TechIcon from "@/components/TechIcon";
 import { techStack } from "@/lib/logos";
+import Button from "@mui/material/Button";
 
 export default function About() {
   const container = useRef(null);
@@ -22,6 +23,13 @@ export default function About() {
     }
   }, []);
 
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/EnesMalikDuman-CV.pdf";
+    link.download = "EnesMalikDuman-CV.pdf";
+    link.click();
+  };
+
   return (
     <main className="flex flex-col text-primary bg-white h-full">
       <div className="relative flex flex-col items-center m-32">
@@ -35,7 +43,7 @@ export default function About() {
       <div className="flex justify-center gap-14">
         <div className="w-1/2 flex flex-col gap-4">
           <div className="page-text-font text-[32px]">
-            I&apos;m <span className="text-[#BEBE28]">Enes Malik Duman</span>, a
+            I&apos;m <span className="text-[#BEBE28]">Enes Malik Duman</span>,
             Frontend Developer
           </div>
           <p className="text-primary page-text-font text-[18px] text-left">
@@ -63,10 +71,22 @@ export default function About() {
             as a Frontend team leader for three months.
           </p>
         </div>
-        <div
-          ref={container}
-          style={{ width: "300px", height: "300px", zIndex: 2 }}
-        />
+        <div className="gap-4">
+          <div
+            ref={container}
+            style={{ width: "300px", height: "300px", zIndex: 2 }}
+          />
+          <div className="flex justify-center mt-10">
+            <Button
+              sx={{ backgroundColor: "#BEBE28" }}
+              variant="contained"
+              style={{ zIndex: 2 }}
+              onClick={downloadCV}
+            >
+              Download CV
+            </Button>
+          </div>
+        </div>
       </div>
     </main>
   );
