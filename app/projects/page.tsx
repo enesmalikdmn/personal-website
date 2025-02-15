@@ -7,24 +7,28 @@ const projects = [
     description: "A clone of Jira.",
     image: "/images/jira.png", // Public içindeki resim dosyasının yolu
     link: "https://github.com/enesmalikdmn/task-management-system",
+    technologies: ["React", "Next.js", "TailwindCSS", "Material UI", "Zustand", "ESLint", "DayJs", "Uuid"],
   },
   {
     name: "Job Finder",
     description: "A job search platform.",
     image: "/images/job-finder.png", // Public içindeki resim dosyasının yolu
     link: "https://github.com/enesmalikdmn/job-finder",
+    technologies: ["React", "Next.js", "TypeScript", "Cypress", "REST API", "Zustand", "React Query", "TailwindCSS", "Axios", "Formik", "Yup", "ESLint", "Framer Motion"],
   },
   {
     name: "E-Commerce App",
     description: "An online platform for seamless shopping.",
     image: "/images/ecommerce.png", // Public içindeki resim dosyasının yolu
     link: "https://github.com/enesmalikdmn/ecommerce-app",
+    technologies: ["React", "React Router", "React Query", "Formik", "Yup", "Chakra UI", "Context API", "Axios", "TailwindCSS", "ESLint", "Framer Motion"],
   },
   {
     name: "Moive App",
     description: "A movie app with broadcast channel.",
     image: "/images/movieList.png", // Public içindeki resim dosyasının yolu
     link: "https://github.com/enesmalikdmn/broadcast-channel-basic-example",
+    technologies: ["React", "Broadcast Channel"],
   },
 ];
 
@@ -47,6 +51,7 @@ function Projects() {
             image={project.image}
             description={project.description}
             link={project.link}
+            technologies={project.technologies}
           />
         ))}
       </div>
