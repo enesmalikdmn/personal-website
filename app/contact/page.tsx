@@ -10,7 +10,9 @@ export default function Contact() {
   const [message, setMessage] = useState("");
 
   const sendEmail = () => {
-    window.location.href = `mailto:enesmalikdmn@gmail.com?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+    window.location.href = `mailto:enesmalikdmn@gmail.com?subject=${encodeURIComponent(
+      name
+    )}&body=${encodeURIComponent(message)}`;
     setName("");
     setMail("");
     setMessage("");
@@ -59,14 +61,16 @@ export default function Contact() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <Button
-              sx={{ backgroundColor: "#BEBE28" }}
-              className="w-48 mt-6"
-              variant="contained"
-              onClick={sendEmail}
-            >
-              Send Message
-            </Button>
+            <div className="mt-6">
+              <Button
+                sx={{ backgroundColor: "#BEBE28" }}
+                className="w-48"
+                variant="contained"
+                onClick={sendEmail}
+              >
+                Send Message
+              </Button>
+            </div>
           </div>
         </div>
       </div>
