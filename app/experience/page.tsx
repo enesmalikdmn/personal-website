@@ -12,15 +12,15 @@ const experiences = [
 export default function Experience() {
   return (
     <main className="flex flex-col text-primary bg-white h-full">
-      <div className="relative flex flex-col items-center m-32">
-        <div className="text-[8rem] uppercase font-semibold opacity-10 absolute top-1/2 -translate-y-1/2">
-          Experiences
+      <div className="relative flex flex-col items-center m-16 md:m-24 lg:m-32">
+      <div className="text-[2rem] md:text-[6rem] lg:text-[8rem] uppercase flex font-semibold opacity-10 absolute top-1/2 -translate-y-1/2">
+      Experiences
         </div>
-        <div className="text-[2rem] font-semibold text-black relative z-10 border-b-2 border-[#BEBE28]">
+        <div className="text-[0.75rem] md:text-[1.5rem] lg:text-[2rem] font-semibold text-black relative z-10 border-b-2 border-[#BEBE28]">
           My Experience
         </div>
       </div>
-      <div className="flex flex-wrap gap-6 justify-center bg-white h-full overflow-y-scroll">
+      <div className="flex flex-wrap gap-6 m-4 justify-center bg-white h-full overflow-y-scroll">
       {experiences.map((experience, index) => (
           <Card
             key={index}

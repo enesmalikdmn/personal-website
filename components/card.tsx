@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       className={`w-[30rem] text-white border-2 border-[#f4f4f4] p-6 rounded-2xl max-w-3xl shadow-sm bg-white shadow-[#f4f4f4] ${
-        link ? "h-[30rem] md:h-[36rem]" : "h-[42rem]"
+        link ? "h-[30rem] md:h-[36rem]" : "h-[36rem] md:h-[42rem]"
       }`}
     >
       <div className="flex flex-col gap-4">
@@ -32,7 +32,13 @@ const Card: React.FC<CardProps> = ({
           {link ? (
             <Image src={image} alt={name} layout="fill" objectFit="cover" />
           ) : (
-            <Image src={image} alt={name} width={240} height={240} />
+            <Image
+              className="w-[120px] h-[120px] md:w-[240px] md:h-[240px]"
+              src={image}
+              alt={name}
+              width={240}
+              height={240}
+            />
           )}
         </div>
         <div className="flex-1"></div>
