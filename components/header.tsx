@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-const Header = () => {
+const Header = (props: { onRouteChange: (path: string) => void }) => {
   const router = useRouter();
   const pathname = usePathname(); // Şu anki sayfanın yolunu al
 
@@ -15,6 +15,11 @@ const Header = () => {
     { name: "Contact Me", path: "/contact" },
   ];
 
+  const handleRouteClick = (path: string) => {
+    router.push(path);
+    props.onRouteChange(path);
+  };
+
   return (
     <header className="flex flex-col w-full text-primary justify-center text-lg items-center gap-8 cursor-pointer">
       {menuItems.map((item) => (
@@ -23,7 +28,7 @@ const Header = () => {
           className={`cursor-pointer hover:text-[#BEBE28] ${
             pathname === item.path ? "text-[#BEBE28]" : ""
           }`}
-          onClick={() => router.push(item.path)}
+          onClick={() =>handleRouteClick(item.path)}
         >
           {item.name}
         </span>

@@ -28,7 +28,7 @@ export default function Contact() {
           Get In Touch
         </div>
       </div>
-      <div className="flex w-full gap-6 justify-center bg-white h-full mt-10">
+      <div className="flex w-full gap-6 justify-center bg-white h-full mt-0 md:mt-10">
         <div className="flex w-3/4 xl:w-1/2 flex-col gap-6">
           <div className="flex justify-center my-4">
             Send me a note, and let’s get started on your project today!

@@ -5,7 +5,13 @@ import Header from "./header";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-const Sidebar = () => {
+const Sidebar = (props: { onRouteChange: (path: string) => void }) => {
+
+  const handleRouteChange = (path: string) => {
+    props.onRouteChange(path);
+  };
+    
+
   return (
     <div className="h-full w-full flex flex-col gap-36 justify-center items-center bg-black">
       {/* Dönüş Animasyonu için Container */}
@@ -36,7 +42,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <Header />
+      <Header onRouteChange={handleRouteChange} />
       <div className="flex justify-center gap-4 text-primary">
         <a
           className="hover:text-[#0077B5]"

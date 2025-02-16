@@ -33,7 +33,7 @@ export default function LayoutWrapper({
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       } xl:relative xl:translate-x-0`}
         >
-          <Sidebar />
+          <Sidebar onRouteChange={(path) => setSidebarOpen(false)} />
         </div>
 
         {/* Ana İçerik */}
