@@ -40,7 +40,7 @@ export default function About() {
           Know Me More
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row md:flex-row justify-center gap-4 md:gap-14 p-3">
+      <div className="flex flex-col sm:flex-row md:flex-row justify-center overflow-y-scroll pt-12 md:pt-0 gap-4 md:gap-14 p-3">
         <div className="w-full md:w-1/2 flex flex-col gap-4">
           <div className="page-text-font text-[1.25rem] md:text-[2rem]">
             I&apos;m <span className="text-[#BEBE28]">Enes Malik Duman</span>,
