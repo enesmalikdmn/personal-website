@@ -7,7 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Sidebar = () => {
   return (
-    <div className="w-1/6 h-screen flex flex-col gap-36 justify-center items-center bg-black">
+    <div className="h-full w-full flex flex-col gap-36 justify-center items-center bg-black">
       {/* Dönüş Animasyonu için Container */}
       <div className="relative w-48 h-48 group [perspective:1000px]">
         {/* Kartın İç Yapısı */}
