@@ -21,13 +21,13 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       className={`w-[30rem] text-white border-2 border-[#f4f4f4] p-6 rounded-2xl max-w-3xl shadow-sm bg-white shadow-[#f4f4f4] ${
-        link ? "h-[36rem]" : "h-[42rem]"
+        link ? "h-[30rem] md:h-[36rem]" : "h-[42rem]"
       }`}
     >
       <div className="flex flex-col gap-4">
         <div
           onClick={() => window.open(link, "_blank")}
-          className="relative flex justify-center cursor-pointer w-full md:h-[15rem] rounded-lg overflow-hidden"
+          className="relative flex justify-center cursor-pointer w-full h-[8rem] md:h-[15rem] rounded-lg overflow-hidden"
         >
           {link ? (
             <Image src={image} alt={name} layout="fill" objectFit="cover" />
