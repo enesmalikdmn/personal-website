@@ -20,20 +20,20 @@ export default function Contact() {
 
   return (
     <main className="flex flex-col text-primary bg-white h-full">
-      <div className="relative flex flex-col items-center m-32">
-        <div className="text-[8rem] uppercase font-semibold opacity-10 absolute top-1/2 -translate-y-1/2">
+      <div className="relative flex flex-col items-center m-16 md:m-24 lg:m-32">
+      <div className="text-[2rem] md:text-[6rem] lg:text-[8rem] uppercase flex font-semibold opacity-10 absolute top-1/2 -translate-y-1/2">
           Contact
         </div>
-        <div className="text-[2rem] font-semibold text-black relative z-10 border-b-2 border-[#BEBE28]">
+        <div className="text-[0.75rem] md:text-[1.5rem] lg:text-[2rem] font-semibold text-black relative z-10 border-b-2 border-[#BEBE28]">
           Get In Touch
         </div>
       </div>
       <div className="flex w-full gap-6 justify-center bg-white h-full mt-10">
-        <div className="flex w-1/2 flex-col gap-6">
+        <div className="flex w-3/4 xl:w-1/2 flex-col gap-6">
           <div className="flex justify-center my-4">
             Send me a note, and let’s get started on your project today!
           </div>
-          <div className="flex gap-6">
+          <div className="flex md:flex-row flex-col gap-6">
             <TextField
               className="flex flex-1"
               id="outlined-basic"
